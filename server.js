@@ -1,3 +1,7 @@
+// Junhua Guan
+// ID: 301189162
+// Date: 08 Oct 2022
+
 const express = require("express")
 const path = require("path")
 const logger = require("morgan")
@@ -6,7 +10,7 @@ const indexroutes = require("./app/routes/index")
 
 var app = express()
 var HOST = "localhost"
-var PORT = 3001
+var PORT = 3000
 
 
 app.set('view engine', 'ejs')

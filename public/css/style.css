@@ -1,3 +1,4 @@
+
 body
 {
   margin-top: 0;
@@ -41,4 +42,13 @@ tr
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+}
+
+.buttonhp
+{
+ margin-left: auto;
+ margin-right: 100px;
+ text-align: center;
+ display: flex;
+ justify-content: center;
 }
