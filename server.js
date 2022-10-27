@@ -80,7 +80,12 @@ app.use(('/'), indexroutes);
 app.use(('/users'), usersroutes)
 app.use(('/contact-list'), businesscontactroutes)
 
-app.listen(PORT, (req, res) => {
-    console.log(`Server running at ${HOST}:${PORT}`)
-})
+//app.listen(PORT, (req, res) => {
+//    console.log(`Server running at ${HOST}:${PORT}`)
+//})
 
+app.set("port", (process.env.PORT || 3000))
+
+app.listen(app.get("port"), () => {
+    console.log("Server is running at port3000")
+})

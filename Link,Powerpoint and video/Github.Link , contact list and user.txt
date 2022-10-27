@@ -1,0 +1,20 @@
+"name":"John"
+"email":"John123@gmail.com"
+"phone":"222-222-222"
+
+"name":"James"
+"email":"James123@gmail.com"
+"phone":"111-222-222"
+
+"name":"Joe"
+"email":"Joe123@gmail.com"
+"phone":"333-222-222"
+
+
+"username":"admin"
+"password":"admin123"
+"email":"admin@gamil.com"
+"displayName": "Jun
+
+
+https://github.com/JunhuaGuan/Assignment1"
