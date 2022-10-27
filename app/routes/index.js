@@ -14,6 +14,20 @@ router.get("/contactMe", indexRoutesController.contactMe);
 router.get("/projects", indexRoutesController.projects);
 router.get("/services", indexRoutesController.services);
 
+// displaying the Login page 
+router.get('/login', indexRoutesController.displayLoginPage);
+
+// processing the Login page 
+router.post('/login', indexRoutesController.processLoginPage);
+
+// displaying the Register page 
+router.get('/register', indexRoutesController.displayRegisterPage);
+
+// processing the Register page 
+router.post('/register', indexRoutesController.processRegisterPage);
+
+// perform UserLogout 
+router.get('/logout', indexRoutesController.performLogout);
 
 module.exports = router
 

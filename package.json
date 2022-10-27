@@ -14,12 +14,14 @@
     "connect-flash": "^0.1.1",
     "express-ejs-layouts": "^2.5.1",
     "express-session": "^1.17.3",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.6.6",
     "morgan": "^1.10.0",
     "passport": "^0.6.0",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^7.1.2"
-  },"engines": {
+  },
+  "engines": {
     "node": "^10.15.0",
     "npm": "^6.0.0"
   },

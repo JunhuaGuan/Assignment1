@@ -8,8 +8,9 @@ const logger = require("morgan")
 const expressLayouts = require('express-ejs-layouts')
 const indexroutes = require("./app/routes/index")
 // Routes for Business Contact and User
-let usersroutes = require("../assignment1/app/routes/users")
-let businesscontactroutes = require("../assignment1/app/routes/contact")
+
+let usersroutes = require("./app/routes/user")
+let businesscontactroutes = require("./app/routes/contact")
 
 
 // modules for authentication
@@ -18,6 +19,13 @@ let passport = require("passport")
 let passportLocal = require("passport-local")
 let localStrategy = passportLocal.Strategy
 let flash = require("connect-flash")
+
+// database 
+let mongoose = require('mongoose');
+let DB = require('./app/config/db');
+
+// moogoose to db url
+mongoose.connect(DB.URI, {useNewUrlParser: true, useUnifiedTopology: true});
 
 
 var app = express()
@@ -54,12 +62,14 @@ app.use(flash())
 app.use(passport.initialize())
 app.use(passport.session())
 
-// passport user configuration
-
 
 // create a user model instance
-let userModel = require('../assignment1/app/models/user')
+let userModel = require('./app/models/user')
 let User = userModel.User
+
+// user auth
+passport.use(User.createStrategy())
+
 
 // serialize and deserialize user info
 passport.serializeUser(User.serializeUser())
@@ -67,8 +77,8 @@ passport.deserializeUser(User.deserializeUser())
 
 app.use(('/'), indexroutes);
 // routing for user and business 
-app.use('/users', usersroutes)
-app.use('/contact-list', businesscontactroutes)
+app.use(('/users'), usersroutes)
+app.use(('/contact-list'), businesscontactroutes)
 
 app.listen(PORT, (req, res) => {
     console.log(`Server running at ${HOST}:${PORT}`)
